@@ -5,7 +5,7 @@ function newItem() {
   li.appendChild(document.createTextNode("- " + item));
   ul.appendChild(li);
   document.getElementById("input").value = "";
-  //li.onclick = removeItem;
+  li.onclick = removeItem;
 }
 
 document.body.onkeyup = function(e) {
@@ -13,3 +13,7 @@ document.body.onkeyup = function(e) {
     newItem();
   }
 };
+
+function removeItem(e) {
+  e.target.parentElement.removeChild(e.target);
+}
